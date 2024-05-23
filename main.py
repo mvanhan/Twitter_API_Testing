@@ -53,6 +53,7 @@ def comment_on_tweets(tweets, link, promotional_content):
         except tweepy.TweepError as e:
             print(f"Error: {e}")
 
+
 if __name__ == "__main__":
     keywords = ["politics", "Biden", "Trump", "2024election"] 
     link = "bidenortrump.org"
@@ -61,33 +62,3 @@ if __name__ == "__main__":
     for keyword in keywords:
         tweets = search(keyword)
         comment_on_tweets(tweets, link, promotional_content)
-
-
-# import os
-# from openai import OpenAI
-
-# client = OpenAI(
-#     api_key='sk-proj-GtxgjENr6qvzVoj2Zs0aT3BlbkFJli9Mb5mEYltlwpC1uM11'  
-# )
-
-# def generate_text(prompt):
-#     try:
-#         chat_completion = client.chat.completions.create(
-#             model="gpt-3.5-turbo-16k",
-#             messages=[
-#                 {
-#                     "role": "user",
-#                     "content": prompt,
-#                 }
-#             ]
-#         )
-#         return chat_completion.choices[0].message.content.strip()
-#     except Exception as e:
-#         return str(e)
-
-# if __name__ == "__main__":
-#     prompt = "Who is the current president of the US?"
-#     result = generate_text(prompt)
-#     print(f"Generated Text: {result}")
-
-
